@@ -3,298 +3,297 @@
   <head>
     <title>YouTube-clone</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="icon" type="image/png" href="images/YouTube_full-color_icon_(2017).svg.png" >
+    <link rel="icon" type="image/svg+xml" href="./images/youtube-logo.svg" >
     <style>
       body {
-  font-family: Arial, Helvetica, sans-serif;
-  margin-bottom: 1000px;
-  padding-top: 60px;
-  padding-left: 80px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-bottom: 1000px;
+        padding-top: 60px;
+        padding-left: -1px;
+      }
 
-}
-.searchheader
-{
-  display: flex;
-  flex-direction: row;
-  height: 55px;
-  justify-content: space-between;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  background-color:white;
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: #cecbcb;
-  z-index: 1;
-}
-.left{
-  display: flex;
-  margin-left: 20px;
-  width: 200px;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 140px;
-}
-.right{
-  display: flex;
-  width: 200px;
-  max-width: 180px;
-  align-items: center;
-  justify-content: space-between;
-  margin-right: 20px;
+      .searchheader {
+        display: flex;
+        flex-direction: row;
+        height: 55px;
+        justify-content: space-between;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        background-color: white;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-bottom-color: #cecbcb;
+        z-index: 1;
+      }
 
-}
-.middle
-{
-  
-  flex:1;
-  display: flex;
-  border-radius: 20px;
-  margin-right:30px;
-  margin-left: 45px;
-  max-width: 500px;
-  align-items: center;
-}
-.search:active
-{
-  border-color: lightblue;
-  border-width: 1px;
-}
-.search{
-  border-radius: 30px;
-  flex: 1;
-  height: 40px;
-  max-width: 450px;
-}
-.video {
-  width: 100%;
-  vertical-align: top;
-}
+      .left {
+        display: flex;
+        margin-left: 20px;
+        width: 200px;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 140px;
+      }
 
+      .right {
+        display: flex;
+        width: 200px;
+        max-width: 180px;
+        align-items: center;
+        justify-content: space-between;
+        margin-right: 20px;
+      }
 
-.thumbnail {
-  position: relative;
-  width: 100%;
-}
+      .middle {
+        flex: 1;
+        display: flex;
+        border-radius: 20px;
+        margin-right: 30px;
+        margin-left: 45px;
+        max-width: 500px;
+        align-items: center;
+      }
 
-.img1 {
-  width: 100%;
-  object-fit: cover;
-  border-radius: 12px;
-  display: block;
-}
+      .search:active {
+        border-color: lightblue;
+        border-width: 1px;
+      }
 
-.time {
-  position: absolute;
-  bottom: 8px;   
-  right: 8px;    
-  background: rgba(0,0,0,0.8);
-  color: white;
-  font-size: 12px;
-  font-weight: 500;
-  padding: 2px 6px;
-  border-radius: 3px;
-  font-family: Arial, sans-serif;
-}
+      .search {
+        border-radius: 30px;
+        flex: 1;
+        height: 40px;
+        max-width: 450px;
+      }
 
+      .video {
+        width: 100%;
+        vertical-align: top;
+      }
 
-/* ✅ fixed 3 columns grid */
-.divgrid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;  /* 3 equal parts */
-  column-gap: 15px;
-  row-gap: 20px;
-}
+      .thumbnail {
+        position: relative;
+        width: 100%;
+      }
 
-/* ✅ grid for channel logo + text */
-.channel-info {
-  display: grid;
-  grid-template-columns: 36px 1fr;
-  gap: 8px;
-  margin-top: 8px;
-  align-items: start;
-}
+      .img1 {
+        width: 100%;
+        object-fit: cover;
+        border-radius: 12px;
+        display: block;
+      }
 
-.channelimg1 {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-}
+      .time {
+        position: absolute;
+        bottom: 8px;   
+        right: 8px;    
+        background: rgba(0,0,0,0.8);
+        color: white;
+        font-size: 12px;
+        font-weight: 500;
+        padding: 2px 6px;
+        border-radius: 3px;
+        font-family: Arial, sans-serif;
+      }
 
-/* text styles */
-.p1 {
-  font-weight: bold;
-  font-size: small;
-  margin: 0;
-}
+      /* ✅ fixed 3 columns grid */
+      .divgrid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;  /* 3 equal parts */
+        column-gap: 15px;
+        row-gap: 20px;
+        margin-left: 100px; /* avoid sidebar overlap */
+        padding: 20px;
+      }
 
-.p2 {
-  font-size: small;
-  color: #555;
-  margin: 2px 0;
-  margin-top: 15px;
-}
+      /* ✅ grid for channel logo + text */
+      .channel-info {
+        display: grid;
+        grid-template-columns: 36px 1fr;
+        gap: 8px;
+        margin-top: 8px;
+        align-items: start;
+      }
 
-.p3 {
-  font-size: small;
-  color: gray;
-  margin-top: 3px;
-}
-.hamburger-menu
-{
-  height: 25px;
+      .channelimg1 {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+      }
 
+      /* text styles */
+      .p1 {
+        font-weight: bold;
+        font-size: small;
+        margin: 0;
+      }
 
-}
-.youtube-logo
-{
+      .p2 {
+        font-size: small;
+        color: #555;
+        margin: 2px 0;
+        margin-top: 15px;
+      }
 
-  height: 20px;
-}
-.middle {
-  display: flex;
-  align-items: center;
-}
+      .p3 {
+        font-size: small;
+        color: gray;
+        margin-top: 3px;
+      }
 
-.search {
-  padding: 8px 12px;
-  border: 1px solid #ccc;
-  border-right: none;
-  border-radius: 20px 0 0 20px; /* round only left side */
-  outline: none;
-  width: 300px;
-}
+      .hamburger-menu {
+        height: 25px;
+      }
 
-.search-btn {
-  width: 50px;
-  height: 40px;
-  border: 1px solid #ccc;
-  border-left:;
-  border-radius: 0 20px 20px 0; /* round only right side */
-  background: #f8f8f8;
-  cursor: pointer;
-}
+      .youtube-logo {
+        height: 20px;
+      }
 
-.search-btn img {
-  width: 20px;
-}
+      .middle {
+        display: flex;
+        align-items: center;
+      }
 
-.search-btn:hover {
-  background: #e6e6e6;
-}
+      .search {
+        padding: 8px 12px;
+        border: 1px solid #ccc;
+        border-right: none;
+        border-radius: 20px 0 0 20px; /* round only left side */
+        outline: none;
+        width: 300px;
+      }
 
-.voice-btn {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin-left: 10px;
-  border: 1px solid lightgray;   /* keep consistent border */
-  background: #f8f8f8;
-  cursor: pointer;
-  display: flex;                 /* center icon */
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s ease;     /* smooth hover/active */
-}
+      .search-btn {
+        width: 50px;
+        height: 40px;
+        border: 1px solid #ccc;
+        border-left: none;
+        border-radius: 0 20px 20px 0; /* round only right side */
+        background: #f8f8f8;
+        cursor: pointer;
+      }
 
-.voice-btn img {
-  width: 20px;
-}
+      .search-btn img {
+        width: 20px;
+      }
 
-.voice-btn:hover {
-  background: #e6e6e6;
-}
+      .search-btn:hover {
+        background: #e6e6e6;
+      }
 
-.voice-btn:active {
-  border: 1px solid #333;        /* darker border when pressed */
-  background: #ddd;              /* slight background change */
-}
-.side
-{
-  position: fixed;
-  background-color: white;
-  bottom: 0px;
-  top: 56px;
-  width: 80px;
-  left: 0;
-  cursor: pointer;
-}
-.sidelink
-{
-  
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+      .voice-btn {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-left: 10px;
+        border: 1px solid lightgray;   /* keep consistent border */
+        background: #f8f8f8;
+        cursor: pointer;
+        display: flex;                 /* center icon */
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s ease;     /* smooth hover/active */
+      }
 
-}
-.sidelink:hover{
-  background-color: lightgray;
-}
-.sidelink img{
-  height: 24px;
-}
-.sidelink div{
-  margin-top: 5px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-size: 11px;
-  font-family: Arial, Helvetica, sans-serif;
-  
-}
+      .voice-btn img {
+        width: 20px;
+      }
+
+      .voice-btn:hover {
+        background: #e6e6e6;
+      }
+
+      .voice-btn:active {
+        border: 1px solid #333;        /* darker border when pressed */
+        background: #ddd;              /* slight background change */
+      }
+
+      .side {
+        position: fixed;
+        background-color: white;
+        bottom: 0px;
+        top: 56px;
+        width: 80px;
+        left: 0;
+        cursor: pointer;
+      }
+
+      .sidelink {
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        transition: background 0.2s;
+      }
+
+      .sidelink:hover {
+        background-color: lightgray;
+      }
+
+      .sidelink img {
+        height: 24px;
+      }
+
+      .sidelink div {
+        margin-top: 5px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 11px;
+      }
     </style>
   </head>
   <body>
     <div class="searchheader">
       <div class="left">
-        <img src="images/hamburger-menu.svg" alt="" class="hamburger-menu">
-        <img src="images/youtube-logo.svg" alt="" class="youtube-logo">
+        <img src="./images/hamburger-menu.svg" alt="" class="hamburger-menu">
+        <img src="./images/youtube-logo.svg" alt="" class="youtube-logo">
       </div>
       <div class="middle">
         <input type="search" placeholder="Search" class="search"/>
         <button class="search-btn">
-          <img src="images/search.svg" alt="">
+          <img src="./images/search.svg" alt="">
         </button>
         <button class="voice-btn">
-          <img src="images/voice-search-icon.svg" alt="">
+          <img src="./images/voice-search-icon.svg" alt="">
         </button>
       </div>
 
       <div class="right">
-        <img src="images/upload.svg" alt="" style="width: 25px;">
-        <img src="images/youtube-apps.svg" alt="" style="width: 20px;">
+        <img src="./images/upload.svg" alt="" style="width: 25px;">
+        <img src="./images/youtube-apps.svg" alt="" style="width: 20px;">
         <div style="position: relative;">
-           <img src="images/notifications.svg" alt="" width="25px">
-           <div style="position: absolute;background-color: rgb(225, 4, 4);color: white;border-radius: 50px;padding-left: 5px;padding-right: 5px;right:0px;top:0px;font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-size: 11px;padding-left: px;">3</div>
+           <img src="./images/notifications.svg" alt="" width="25px">
+           <div style="position: absolute;background-color: rgb(225, 4, 4);color: white;border-radius: 50px;padding-left: 5px;padding-right: 5px;right:0px;top:0px;font-size: 11px;">3</div>
         </div>
-        <img src="images/Capture001.png" alt="" style="border-radius: 50px;height:30px;width: 30px;">
+        <img src="./images/Capture001.png" alt="" style="border-radius: 50px;height:30px;width: 30px;">
       </div>
     </div>
 
     <div class="side">
       <div class="sidelink">
-        <img src="images/home.svg" alt="">
+        <img src="./images/home.svg" alt="">
         <div>Home</div>
       </div>
       <div class="sidelink">
-        <img src="images/explore.svg" alt="">
+        <img src="./images/explore.svg" alt="">
         <div>Explore</div>
       </div>
       <div class="sidelink">
-        <img src="images/subscriptions.svg" alt="">
+        <img src="./images/subscriptions.svg" alt="">
         <div>Subscriptions</div>
       </div>
       <div class="sidelink">
-        <img src="images/originals.svg" alt="">
+        <img src="./images/originals.svg" alt="">
         <div>Originals</div>
       </div>
       <div class="sidelink">
-        <img src="images/youtube-music.svg" alt="">
+        <img src="./images/youtube-music.svg" alt="">
         <div>Youtube music</div>
       </div>
       <div class="sidelink">
-        <img src="images/library.svg" alt="">
+        <img src="./images/library.svg" alt="">
         <div>Library</div>
       </div>
     </div>
@@ -302,30 +301,28 @@
     <div class="divgrid">
       <!-- Video 1 -->
       <div class="video">
-  <div class="thumbnail">
-    <img src="images/thumbnail-1.webp" alt="Google CEO Interview" class="img1"/>
-    <div class="time">39:20</div>  
-  </div>
-
-  <div class="channel-info">
-    <img src="images/channel-1.jpeg" alt="channel" class="channelimg1" />
-    <div>
-      <p class="p1">Talking Tech and AI with Google CEO Sundar Pichai!</p>
-      <p class="p2">Marques Brownlee</p>
-      <p class="p3">4M views · 6 months ago</p>
-    </div>
-  </div>
-</div>
-
+        <div class="thumbnail">
+          <img src="./images/thumbnail-1.webp" alt="Google CEO Interview" class="img1"/>
+          <div class="time">39:20</div>  
+        </div>
+        <div class="channel-info">
+          <img src="./images/channel-1.jpeg" alt="channel" class="channelimg1" />
+          <div>
+            <p class="p1">Talking Tech and AI with Google CEO Sundar Pichai!</p>
+            <p class="p2">Marques Brownlee</p>
+            <p class="p3">4M views · 6 months ago</p>
+          </div>
+        </div>
+      </div>
 
       <!-- Video 2 -->
       <div class="video">
         <div class="thumbnail">
-          <img src="images/thumbnail-2.webp" alt="Try Not To Laugh Challenge" class="img1"/>
+          <img src="./images/thumbnail-2.webp" alt="Try Not To Laugh Challenge" class="img1"/>
           <div class="time">14:20</div>  
         </div>
         <div class="channel-info">
-          <img src="images/channel-2.jpeg" alt="channel" class="channelimg1" />
+          <img src="./images/channel-2.jpeg" alt="channel" class="channelimg1" />
           <div>
             <p class="p1">Try Not To Laugh Challenge #9</p>
             <p class="p2">Markiplier</p>
@@ -337,11 +334,11 @@
       <!-- Video 3 -->
       <div class="video">
         <div class="thumbnail">
-          <img src="images/thumbnail-1.webp" alt="Google CEO Interview" class="img1"/>
+          <img src="./images/thumbnail-1.webp" alt="Google CEO Interview" class="img1"/>
           <div class="time">1:20</div>  
         </div>
         <div class="channel-info">
-          <img src="images/channel-1.jpeg" alt="channel" class="channelimg1" />
+          <img src="./images/channel-1.jpeg" alt="channel" class="channelimg1" />
           <div>
             <p class="p1">Talking Tech and AI with Google CEO Sundar Pichai!</p>
             <p class="p2">Marques Brownlee</p>
@@ -353,11 +350,11 @@
       <!-- Video 4 -->
       <div class="video">
         <div class="thumbnail">
-          <img src="images/thumbnail-2.webp" alt="Try Not To Laugh Challenge" class="img1"/>
+          <img src="./images/thumbnail-2.webp" alt="Try Not To Laugh Challenge" class="img1"/>
           <div class="time">10:20</div>  
         </div>
         <div class="channel-info">
-          <img src="images/channel-2.jpeg" alt="channel" class="channelimg1" />
+          <img src="./images/channel-2.jpeg" alt="channel" class="channelimg1" />
           <div>
             <p class="p1">Try Not To Laugh Challenge #9</p>
             <p class="p2">Markiplier</p>
@@ -369,11 +366,11 @@
       <!-- Video 5 -->
       <div class="video">
         <div class="thumbnail">
-          <img src="images/thumbnail-1.webp" alt="Google CEO Interview" class="img1"/>
+          <img src="./images/thumbnail-1.webp" alt="Google CEO Interview" class="img1"/>
           <div class="time">4:20</div>  
         </div>
         <div class="channel-info">
-          <img src="images/channel-1.jpeg" alt="channel" class="channelimg1" />
+          <img src="./images/channel-1.jpeg" alt="channel" class="channelimg1" />
           <div>
             <p class="p1">Talking Tech and AI with Google CEO Sundar Pichai!</p>
             <p class="p2">Marques Brownlee</p>
@@ -385,11 +382,11 @@
       <!-- Video 6 -->
       <div class="video">
         <div class="thumbnail">
-          <img src="images/thumbnail-2.webp" alt="Try Not To Laugh Challenge" class="img1"/>
+          <img src="./images/thumbnail-2.webp" alt="Try Not To Laugh Challenge" class="img1"/>
           <div class="time">29:20</div>  
         </div>
         <div class="channel-info">
-          <img src="images/channel-2.jpeg" alt="channel" class="channelimg1" />
+          <img src="./images/channel-2.jpeg" alt="channel" class="channelimg1" />
           <div>
             <p class="p1">Try Not To Laugh Challenge #9</p>
             <p class="p2">Markiplier</p>
